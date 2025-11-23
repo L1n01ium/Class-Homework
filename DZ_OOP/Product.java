@@ -7,11 +7,11 @@ public class Product {
 	private int quantity;
 	
 	public Product() {
-		this("name", 0.0, "category", true, 0);
+		this("name", 0.0, "category", false, 0);
 	}
 	
 	public Product(String name, double price, String category) {
-		this(name, price, category, true, 0);
+		this(name, price, category, false, 0);
 	}
 	
 	public Product(String name, double price, String category, boolean inStock, int quantity) {
@@ -39,8 +39,12 @@ public class Product {
 	
 	public void sell(int amount) {
 		if (inStock) {
-			this.quantity -= amount;
-			System.out.println("Было продано " + amount + " товаров." + "Осталось: " + quantity); 
+			if (quantity >= amount) {
+				this.quantity -= amount;
+				System.out.println("Было продано " + amount + " товаров." + "Осталось: " + quantity); 
+			} else {
+				System.out.println("Недостаточно товара на складе");
+			}
 		} else {
 			System.out.println("Товара нет на складе");
 		}
