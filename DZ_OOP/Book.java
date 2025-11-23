@@ -27,13 +27,21 @@ public class Book {
 	}
 	
 	public void borrowBook() {
-		this.isAvailable = false;
-		System.out.println("Книга была выдана");
+		if (isAvailable = false) {
+			System.out.println("Книга уже выдана");
+		} else {
+			this.isAvailable = false;
+			System.out.println("Книга была выдана");
+		}
 	}
 	
 	public void returnBook() {
-		this.isAvailable = true;
-		System.out.println("Книгу вернули");
+		if (isAvailable) {
+			System.out.println("Книга уже возвращена");
+		} else {
+			this.isAvailable = true;
+			System.out.println("Книгу вернули");
+		}
 	}
 	
 	public void updateYear(int newYear) {
