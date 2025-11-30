@@ -10,6 +10,7 @@ public class RationalFraction {
 	public RationalFraction(int num1, int num2) {
 		this.num1 = num1;
 		this.num2 = num2;
+		reduce();
 	}
 	
 	public int getNum1() {
@@ -22,10 +23,14 @@ public class RationalFraction {
 	
 	public void setNum1(int newNum1) {
 		this.num1 = newNum1;
+		reduce();
 	}
 	
 	public void setNum2(int newNum2) {
-		this.num2 = newNum2;
+		if (newNum2 != 0) {
+			this.num2 = newNum2;
+			reduce();
+		}
 	}
 	
 	public void reduce() {

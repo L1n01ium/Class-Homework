@@ -43,7 +43,7 @@ public class ComplexNumber {
 	
 	public void sub2(ComplexNumber other) {
 		setValid(getValid() - other.getValid());
-		setImaginary(setImaginary() - other.setImaginary());
+		setImaginary(getImaginary() - other.getImaginary());
 	}
 	
 	public ComplexNumber multNumber(double num) {
@@ -76,16 +76,16 @@ public class ComplexNumber {
 	public void div2(ComplexNumber other) {
 		ComplexNumber n = div(other);
 		setValid(n.getValid());
-		setImaginary(n.setImaginary());
+		setImaginary(n.getImaginary());
 	}
 	
 	public double length() {
-		return Math.powe(getValid() * getValid() + getImaginary() * getImaginary(), 0.5);
+		return Math.sqrt(getValid() * getValid() + getImaginary() * getImaginary());
 	}
 	
 	public String toString() {
 		if (getImaginary() == 0) {
-			return getValid();
+			return String.valueOf(getValid());
 		}
 		if (getValid() == 0) {
 			return getImaginary() + "i";

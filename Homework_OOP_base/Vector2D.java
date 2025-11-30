@@ -19,8 +19,8 @@ public class Vector2D {
 	}
 	
 	public void add2(Vector2D new1) {
-		coord1 = this.getCoord1() + new1.getCoord1();
-		coord2 = this.getCoord2() + new1.getCoord2();
+		this.coord1 += new1.getCoord1();
+		this.coord2 += new1.getCoord2();
 	}
 	
 	public Vector2D sub(Vector2D new1) {
@@ -28,8 +28,8 @@ public class Vector2D {
 	}
 	
 	public void sub2(Vector2D new1) {
-		coord1 = this.getCoord1() - new1.getCoord1();
-		coord2 = this.getCoord2() - new1.getCoord2();
+		this.coord1 -= new1.getCoord1();
+		this.coord2 -= new1.getCoord2();
 	}
 	
 	public Vector2D mult(double num) {
@@ -37,16 +37,16 @@ public class Vector2D {
 	}
 	
 	public void mult2(double num) {
-		coord1 = this.getCoord1() * num;
-		coord2 = this.getCoord2() * num;
+		this.coord1 *= num;
+		this.coord2 *= num;
 	}
 	
 	public String toString() {
-		return coord1 + " " + coord2;
+		return coord1 + ", " + coord2;
 	}
 	
 	public double length() {
-		return Math.pow(coord1 * coord1 + coord2 * coord2, 0.5);
+		return Math.sqrt(coord1 * coord1 + coord2 * coord2);
 	}
 	
 	public double scalarProduct(Vector2D new1) {
@@ -54,7 +54,9 @@ public class Vector2D {
 	}
 	
 	public double cos(Vector2D new1) {
-		return scalarProduct(new1) / (length() + new1.length());
+		double product = scalarProduct(new1);
+        double lengthProduct = length() * new1.length();
+        return product / lengthProduct;
 	}
 	
 	public boolean equals(Vector2D new1) {

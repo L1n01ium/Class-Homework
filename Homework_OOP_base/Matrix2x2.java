@@ -79,7 +79,7 @@ public class Matrix2x2 {
 	public Matrix2x2 mult(Matrix2x2 newArr) {
 		Matrix2x2 res = new Matrix2x2(getArr());
 		for (int i = 0; i < 2; i++) {
-			for (j = 0; j < 2; j++) {
+			for (int j = 0; j < 2; j++) {
 				res.arr[i][j] = 0;
 				for (int k = 0; k < 2; k++) {
 					res.arr[i][j] += this.arr[i][k] * newArr.arr[k][j];
@@ -95,7 +95,7 @@ public class Matrix2x2 {
 			for (int j = 0; j < 2; j++) {
 				res[i][j] = 0;
 				for (int k = 0; k < 2; k++) {
-					res[i][j] += this.res[i][k] * newArr.arr[k][j];
+					res[i][j] += this.arr[i][k] * newArr.arr[k][j];
 				}
 			}
 		}
@@ -107,7 +107,9 @@ public class Matrix2x2 {
 	}
 	
 	public void transpon() {
-		setArr(arr[0][0], arr[1][0], arr[0][1], arr[1][1]);
+		double res = arr[0][1];
+		arr[0][1] = arr[1][0];
+		arr[1][0] = res;
 	}
 	
 	public Matrix2x2 inverseMatrix() {
@@ -120,8 +122,8 @@ public class Matrix2x2 {
 	}
 	
 	public Vector2D multVector(Vector2D vector) {
-		double x = arr[0][0] * vector.getcoord1() + arr[0][1] * arr.getcoord2();
-		double y = arr[1][0] * vector.getcoord1() + arr[1][1] * vector.getcoord2();
+		double x = arr[0][0] * vector.getCoord1() + arr[0][1] * arr.getCoord2();
+		double y = arr[1][0] * vector.getCoord1() + arr[1][1] * vector.getCoord2();
 		return new Vector2D(x,y);
 	}
 	
