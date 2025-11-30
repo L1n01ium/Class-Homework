@@ -4,6 +4,12 @@ public class CarMain {
 		Car car2 = new Car("Lada", "Niva Legend", 2025);
 		Car car3 = new Car("Lada", "Niva Legend", 2025, "white", 1100000, true, 19150);
 		car3.displayInfo();
+		if ((2025 - car3.getYear()) < 4) {
+			System.out.println("Все хорошо! Бери эту машину.");
+		}
+		
+		car3.setYear(2007);
+		System.out.println("Новый год: " + car3.getYear());
 		car3.startEngine();
 		car3.stopEngine();
 		car3.drive(20000);

@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class Car {
 	
+	private static Scanner mysc = new Scanner(System.in);
 	private String brand;
 	private String model;
 	private int year;
@@ -26,12 +29,56 @@ public class Car {
 		this.mileage = mileage;
 	}
 	
+	public void getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(String newBrand) {
+		brand = newBrand;
+		System.out.println("Бренд сменился на " + brand);
+	}
+	
+	public void getModel() {
+		return model;
+	}
+	
+	public void setModel(String newModel) {
+		model = newModel;
+		System.out.println("Модель поменялась на " + model);
+	}
+	
+	public int getYear() {
+		return year;
+	}
+	
+	public void setYear(int newYear) {
+		while (newYear <= 1885 || newYear >= 2025) {
+			System.out.println("Введите нормальный год!");
+			newYear = mysc.nextInt();
+		}
+		year = newYear;
+	}
+	
+	public void getColor() {
+		return color;
+	}
+	
+	
+	public void getRunning() {
+		return isRunning;
+	
+	public void setRunning(boolean isRunning) {
+		this.isRunning = isRunning;
+	}
+	
+	
+	
 	public void displayInfo() {
 		System.out.println(brand + " " + model + " " + year + " " + color + " " + price + " " + isRunning + " " + mileage);
 	}
 	
 	public void startEngine() {
-		this.isRunning = true;
+		setRunning(true);
 		System.out.println("Двигатель запущен");
 	}
 	
