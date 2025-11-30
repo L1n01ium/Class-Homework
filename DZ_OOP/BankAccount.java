@@ -87,8 +87,24 @@ public class BankAccount {
 		if (getBalance() >= amount) {
 			this.balance -= amount;
 			System.out.println("Баланс после снятия: " + getBalance());
+		if (isActive = true) {
+			this.balance += amount;
+			System.out.println("Новый баланс после пополнения: " + balance);
 		} else {
-			System.out.println("Недостаточно средств на балансе для снятия " + amount);
+			System.out.println("Счет неактивен");
+		}
+	}
+	
+	public void withdraw(double amount) {
+		if (isActive = true) {
+			if (balance >= amount) {
+				this.balance -= amount;
+				System.out.println("Баланс после снятия: " + balance);
+			} else {
+				System.out.println("Недостаточно средств на балансе для снятия " + amount);
+			}
+		} else {
+			System.out.println("Счет неактивен");
 		}
 	}
 	
@@ -136,4 +152,6 @@ public class BankAccount {
 			System.out.println(accountNumber + " " + ownerName + " " + balance + " " + currency);
 		}
 	}
+}
+
 }
