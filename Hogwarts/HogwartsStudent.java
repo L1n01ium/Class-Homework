@@ -25,8 +25,8 @@ public class HogwartsStudent extends Wizard {
 		}
 	}
 	
-	public int setMischiefLevel(int newMischiefLevel) {
-		if (newMischiefLevel < 0) {
+	public void setMischiefLevel(int newMischiefLevel) {
+		if (newMischiefLevel >= 0) {
 			this.mischiefLevel = newMischiefLevel;
 		} else {
 			System.out.println("Неверный формат");
@@ -37,7 +37,7 @@ public class HogwartsStudent extends Wizard {
 		if (getMana() >= 10) {
 			setMana(getMana() - 10);
 			setMischiefLevel(getMischiefLevel() + 5);
-			System.out.println("Гарри подложил слизеринскому студенту лягушку в учебник!");
+			System.out.println(getName() + " подложил слизеринскому студенту лягушку в учебник!");
 		} else {
 			System.out.println("Маны не хватает");
 		}

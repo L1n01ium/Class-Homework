@@ -75,7 +75,7 @@ public class Wizard {
 	public void castSpell(String spellName) {
 		if (getMana() >= 10) {
 			setMana(getMana() - 10);
-			setSpellPower(getSpellPower() + 10);
+			setSpellPower(getSpellPower() + 5);
 			System.out.println("Вы использовали " + spellName);
 		} else {
 			System.out.println("Недостаточно маны! Попей мятный чай пж..");
@@ -116,11 +116,11 @@ public class Wizard {
 		}
 	}
 	
-	public int getTotalWizards() {
+	public static int getTotalWizards() {
 		return totalWizards;
 	}
 	
-	public int getTotalSpellPower() {
+	public static int getTotalSpellPower() {
 		return totalSpellPower;
 	}
 	
