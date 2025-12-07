@@ -122,7 +122,7 @@ public class Matrix2x2 {
 	}
 	
 	public Vector2D multVector(Vector2D vector) {
-		double x = arr[0][0] * vector.getCoord1() + arr[0][1] * arr.getCoord2();
+		double x = arr[0][0] * vector.getCoord1() + arr[0][1] * vector.getCoord2();
 		double y = arr[1][0] * vector.getCoord1() + arr[1][1] * vector.getCoord2();
 		return new Vector2D(x,y);
 	}
@@ -132,7 +132,7 @@ public class Matrix2x2 {
 	}
 	
 	public void arr(double a, double b, double c, double d) {
-		arr = new arr[][]{{a, b}, {c, d}};
+		arr = new double[][]{{a, b}, {c, d}};
 	}
 	
 	public double[][] getArr() {

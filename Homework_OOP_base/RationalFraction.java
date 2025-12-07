@@ -36,13 +36,13 @@ public class RationalFraction {
 	public void reduce() {
 		while (true) {
             boolean flag = false;
-            for (int i = 1; i < (a < b ? a : b); i++) {
-                 if (a % i == 0 && b % i == 0) {
-                     a = a / i;
-                     b = b / i;
-                     flag = true;
-                     break;
-                 }
+            for (int i = 1; i < (num1 < num2 ? num1 : num2); i++) {
+                 if (num1 % i == 0 && num2 % i == 0) {
+                    num1 = num1 / i;
+                    num2 = num2 / i;
+                    flag = true;
+                    break;
+                }
             }
             if (!flag) {break;}
         }
@@ -101,6 +101,6 @@ public class RationalFraction {
 	}
 	
 	public int numberPart() {
-		reduce getNum1() / getNum2();
+		return getNum1() / getNum2();
 	}
 }

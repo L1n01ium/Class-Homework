@@ -56,12 +56,14 @@ public class ComplexNumber {
 	}
 	
 	public ComplexNumber mult(ComplexNumber other) {
-		return new ComplexNumber(getValid() * other.getValid() - getImaginary() * other.getImaginary(), getImaginary() * other.getValid() + getValid() * other.getImaginary())
+		return new ComplexNumber(getValid() * other.getValid() - getImaginary() * other.getImaginary(), getImaginary() * other.getValid() + getValid() * other.getImaginary());
 	}
 	
 	public void mult2(ComplexNumber other) {
-		setValid(getValid() * other.getValid() - getImaginary() * other.getImaginary());
-		setImaginary(getImaginary() * other.getImaginary() + getValid() * other.getImaginary());
+		double newValid = getValid() * other.getValid() - getImaginary() * other.getImaginary();
+		double newImaginary = getImaginary() * other.getValid() + getValid() * other.getImaginary();
+		setValid(newValid);
+		setImaginary(newImaginary);
 	}
 	
 	public ComplexNumber div(ComplexNumber other) {
@@ -107,10 +109,10 @@ public class ComplexNumber {
 	
 	public ComplexNumber pow(double n) {
 		ComplexNumber c = new ComplexNumber(Math.cos(arg()), Math.sin(arg()));
-		return c.multNumber(Math.pow(length(), n);
+		return c.multNumber(Math.pow(length(), n));
 	}
 	
 	public boolean equals(ComplexNumber other) {
-		return (getValid == other.getValid() && getImaginary() == getImaginary());
+		return (getValid() == other.getValid() && getImaginary() == other.getImaginary());
 	}
 }
